@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/chat";
+const API_URL = "/chat"; // relative path — works locally and once deployed
 
 const chatBox = document.getElementById("chatBox");
 const msgInput = document.getElementById("msgInput");
