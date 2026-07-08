@@ -14,7 +14,6 @@ const MODEL = "crm-di-glm47b_30b_it";
 const TOKEN_URL = "https://agent-770565564.development.catalystserverless.com/server/get_llm_token/";
 // --------------------------
 
- 
 const CATALYST_PATH = `/quickml/v1/project/${CATALYST_PROJECT_ID}/glm/chat`;
 const CATALYST_HOST = "api.catalyst.zoho.com";
  
@@ -176,5 +175,8 @@ app.post("/chat", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+ 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
  
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
