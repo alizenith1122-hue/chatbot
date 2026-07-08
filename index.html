@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Chatbot</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  #chatBox {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    background: #fafafa;
+  }
+  .msg { margin: 8px 0; padding: 8px 12px; border-radius: 8px; max-width: 80%; }
+  .user { background: #DCF8C6; margin-left: auto; text-align: right; }
+  .bot { background: #EAEAEA; }
+  #inputRow { display: flex; gap: 8px; }
+  #msgInput { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+  button { padding: 10px 16px; border: none; border-radius: 6px; background: #4CAF50; color: white; cursor: pointer; }
+  button:disabled { background: #aaa; cursor: not-allowed; }
+</style>
+</head>
+<body>
+
+<h2>Chatbot</h2>
+<div id="chatBox"></div>
+
+<div id="inputRow">
+  <input type="text" id="msgInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendMessage()" />
+  <button id="sendBtn" onclick="sendMessage()">Send</button>
+  <button onclick="clearHistory()" style="background:#999;">Clear Chat</button>
+</div>
+
+<script src="chatbot.js"></script>
+
+</body>
+</html>
